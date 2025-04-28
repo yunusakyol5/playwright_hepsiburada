@@ -31,7 +31,8 @@ class ProductPage(BasePage, ProductContainer):
     
     def add_to_cart(self):
         """Add the product to the car and navigate to the cart page"""
-        add_to_cart_button = self.wait_for_element(self.locators.ADD_TO_CART_BUTTON)
+        add_to_cart_button = self.wait_for_element(self.locators.ADD_TO_CART_BUTTON, "enabled")
+        add_to_cart_button.scroll_into_view_if_needed()
         add_to_cart_button.click()
 
         try:

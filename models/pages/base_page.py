@@ -5,7 +5,7 @@ class BasePage(PageInterface):
     """Base page class that contains common methods for all pages"""
     def __init__(self, page: Page):
         self.page = page
-        self.default_timeout = 10_000
+        self.default_timeout = 30_000
 
     def navigate(self, url: str):
         """Navigate to the given URL"""

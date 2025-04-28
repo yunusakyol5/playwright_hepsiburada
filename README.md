@@ -8,7 +8,6 @@ A test automation framework built with Python and Playwright to perform end-to-e
 - Page Object Model (POM) design pattern implementation
 - Parameterized testing for multiple search keywords
 - Automatic screenshot capture
-- Video recording of test sessions
 - HTML test report generation
 
 ## Project Structure
@@ -24,7 +23,6 @@ playwright_hepsiburada/
 ├── tests/                # Test scripts
 │   └── test_hepsiburada.py # Main test script
 ├── .playwright-screenshots/ # Screenshot storage
-├── .playwright-videos/   # Video recordings storage
 ├── conftest.py           # Pytest configurations and fixtures
 ├── requirements.txt      # Project dependencies
 └── README.md             # Project documentation
@@ -77,46 +75,15 @@ To run the tests:
 pytest tests/test_hepsiburada.py
 ```
 
-### Test Artifacts (Screenshots and Videos)
-
-To take screenshots on test failures:
+To run with screenshot option:
 ```bash
-pytest tests/test_hepsiburada.py --screenshot-on-failure
+pytest tests/test_hepsiburada.py --screenshot=only-on-failure
 ```
-
-To always take screenshots:
-```bash
-pytest tests/test_hepsiburada.py --screenshot=on
-```
-
-To record videos only for failed tests:
-```bash
-pytest tests/test_hepsiburada.py --video=retain-on-failure
-```
-
-To record videos for all tests:
-```bash
-pytest tests/test_hepsiburada.py --video=on
-```
-
-To disable video recording:
-```bash
-pytest tests/test_hepsiburada.py --video=off
-```
-
-You can combine screenshot and video options:
-```bash
-pytest tests/test_hepsiburada.py --screenshot-on-failure --video=retain-on-failure
-```
-
-### HTML Reports
 
 To run with HTML report generation:
 ```bash
 pytest tests/test_hepsiburada.py --html=report.html
 ```
-
-### Other Options
 
 To run a desired number of times:
 ```bash
@@ -135,6 +102,5 @@ After running tests with the HTML reporter, open `report.html` in your browser t
 ## Notes
 
 - The tests run in headed mode (with browser UI visible) because Hepsiburada blocks headless browser access
-- Screenshots are saved in the `.playwright-screenshots` directory
-- Video recordings are saved in the `.playwright-videos` directory
+- Screenshots are saved in the `.playwright-screenshots` directory when tests fail
 - The framework tests multiple product categories: laptop, kulaklık (headphones), buzdolabı (refrigerator), and telefon (phone)
