@@ -37,7 +37,7 @@ playwright_hepsiburada/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/playwright_hepsiburada.git
+   git clone https://github.com/yunusakyol5/playwright_hepsiburada.git
    cd playwright_hepsiburada
    ```
 
